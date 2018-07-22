@@ -66,7 +66,7 @@ public class SecurityApplicationTests {
     public void testUser() {
         SysUserExample sysUserExample = new SysUserExample();
         SysUserExample.Criteria criteria = sysUserExample.createCriteria();
-       // criteria.andCreateTimeIsNull();
+        criteria.andCreateTimeIsNull();
         criteria.andDeleteFlagEqualTo((short) 0);
 
         List<SysUser> list = sysUserMapper.selectByExample(sysUserExample);
