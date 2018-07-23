@@ -91,6 +91,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yyc.security.pojo.SysMenu">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_MENU.nextval from dual
+    </selectKey>
     insert into SYS_MENU (ID, DELETE_FLAG, MENU_SRC, 
       MENU_PARMENT_ID, MENU_INDEX, MENU_MARK
       )
@@ -99,6 +102,9 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="com.yyc.security.pojo.SysMenu">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_MENU.nextval from dual
+    </selectKey>
     insert into SYS_MENU
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

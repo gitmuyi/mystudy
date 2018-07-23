@@ -99,12 +99,18 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yyc.security.pojo.SysRolePermission">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_ROLE_PERMISSION.nextval from dual
+    </selectKey>
     insert into SYS_ROLE_PERMISSION (ID, ROLE_ID, PERM_ID, 
       DELETE_FLAG)
     values (#{id,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{permId,jdbcType=VARCHAR}, 
       #{deleteFlag,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.yyc.security.pojo.SysRolePermission">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_ROLE_PERMISSION.nextval from dual
+    </selectKey>
     insert into SYS_ROLE_PERMISSION
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

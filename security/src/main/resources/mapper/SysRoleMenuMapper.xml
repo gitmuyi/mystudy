@@ -99,12 +99,18 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yyc.security.pojo.SysRoleMenu">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_ROLE_MENU.nextval from dual
+    </selectKey>
     insert into SYS_ROLE_MENU (ID, ROLE_ID, MENU_ID, 
       DELETE_FLAG)
     values (#{id,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{menuId,jdbcType=VARCHAR}, 
       #{deleteFlag,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.yyc.security.pojo.SysRoleMenu">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_ROLE_MENU.nextval from dual
+    </selectKey>
     insert into SYS_ROLE_MENU
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

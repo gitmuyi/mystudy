@@ -103,6 +103,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.yyc.security.pojo.SysUser">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_USER.nextval from dual
+    </selectKey>
     insert into SYS_USER (ID, USER_NAME, PASSWORD, 
       CREATE_TIME, CREATE_USER, UPDATE_TIME, 
       UPDATE_USER, DELETE_FLAG)
@@ -111,6 +114,9 @@
       #{updateUser,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.yyc.security.pojo.SysUser">
+    <selectKey keyProperty="id" resultType="String" order="BEFORE">
+      select SEQ_SYS_USER.nextval from dual
+    </selectKey>
     insert into SYS_USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
