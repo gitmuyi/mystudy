@@ -21,9 +21,9 @@ public interface SysPermissionService {
 
     SysPermission selectByPrimaryKey(String id);
 
-    int updateByExampleSelective(@Param("record") SysPermission record, @Param("example") SysPermissionExample example);
+    int updateByExampleSelective( SysPermission record, SysPermissionExample example);
 
-    int updateByExample(@Param("record") SysPermission record, @Param("example") SysPermissionExample example);
+    int updateByExample( SysPermission record,  SysPermissionExample example);
 
     int updateByPrimaryKeySelective(SysPermission record);
 

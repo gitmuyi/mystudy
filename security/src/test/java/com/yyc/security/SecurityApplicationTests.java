@@ -11,13 +11,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.jdbc.JdbcTestUtils;
 
-import javax.annotation.Resource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -30,18 +27,12 @@ public class SecurityApplicationTests {
     @Autowired
     private SysUserMapper sysUserMapper;
 
-    @Test
+   /* @Test
     public void contextLoads() {
         redisService.set("test", 123);
         Object o = redisService.get("test");
         System.out.println(o);
-    }
-
-    @Test
-    public void insert() {
-        String sql = "insert into  sys_user(id,user_name,password,create_time,create_user)values(SEQ_SYS_USER.NEXTVAL,'测试','123456',sysdate,'创建人')";
-        jdbcTemplate.execute(sql);
-    }
+    }*/
 
     @Test
     public void testOracle() {

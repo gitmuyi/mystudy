@@ -21,9 +21,9 @@ public interface SysRolePermissionService {
 
     SysRolePermission selectByPrimaryKey(String id);
 
-    int updateByExampleSelective(@Param("record") SysRolePermission record, @Param("example") SysRolePermissionExample example);
+    int updateByExampleSelective( SysRolePermission record,  SysRolePermissionExample example);
 
-    int updateByExample(@Param("record") SysRolePermission record, @Param("example") SysRolePermissionExample example);
+    int updateByExample( SysRolePermission record,  SysRolePermissionExample example);
 
     int updateByPrimaryKeySelective(SysRolePermission record);
 

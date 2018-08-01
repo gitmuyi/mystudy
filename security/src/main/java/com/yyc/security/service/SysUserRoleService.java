@@ -17,7 +17,7 @@ public interface SysUserRoleService {
 
     List<SysUserRole> selectByExample(SysUserRoleExample example);
 
-    int updateByExampleSelective(@Param("record") SysUserRole record, @Param("example") SysUserRoleExample example);
+    int updateByExampleSelective( SysUserRole record,SysUserRoleExample example);
 
-    int updateByExample(@Param("record") SysUserRole record, @Param("example") SysUserRoleExample example);
+    int updateByExample( SysUserRole record,  SysUserRoleExample example);
 }

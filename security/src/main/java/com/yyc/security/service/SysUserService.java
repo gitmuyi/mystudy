@@ -21,9 +21,9 @@ public interface SysUserService {
 
     SysUser selectByPrimaryKey(String id);
 
-    int updateByExampleSelective(@Param("record") SysUser record, @Param("example") SysUserExample example);
+    int updateByExampleSelective(SysUser record, SysUserExample example);
 
-    int updateByExample(@Param("record") SysUser record, @Param("example") SysUserExample example);
+    int updateByExample(SysUser record, SysUserExample example);
 
     int updateByPrimaryKeySelective(SysUser record);
 

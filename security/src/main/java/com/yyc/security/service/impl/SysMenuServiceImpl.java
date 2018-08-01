@@ -53,4 +53,9 @@ public class SysMenuServiceImpl implements SysMenuService {
     public int updateByExample(SysMenu record, SysMenuExample example) {
         return sysMenuMapper.updateByExample(record, example);
     }
+
+    @Override
+    public List<SysMenu> findByRoleId(String roleId) {
+        return sysMenuMapper.findByRoleId(roleId);
+    }
 }

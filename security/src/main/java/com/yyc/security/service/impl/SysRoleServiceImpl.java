@@ -18,7 +18,7 @@ import java.util.List;
 public class SysRoleServiceImpl implements SysRoleService {
     @Autowired
     private SysRoleMapper sysRoleMapper;
-    
+
     @Override
     public long countByExample(SysRoleExample example) {
         return sysRoleMapper.countByExample(example);
@@ -56,12 +56,12 @@ public class SysRoleServiceImpl implements SysRoleService {
 
     @Override
     public int updateByExampleSelective(SysRole record, SysRoleExample example) {
-        return sysRoleMapper.updateByExampleSelective(record,example);
+        return sysRoleMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public int updateByExample(SysRole record, SysRoleExample example) {
-        return sysRoleMapper.updateByExample(record,example);
+        return sysRoleMapper.updateByExample(record, example);
     }
 
     @Override
@@ -72,5 +72,10 @@ public class SysRoleServiceImpl implements SysRoleService {
     @Override
     public int updateByPrimaryKey(SysRole record) {
         return sysRoleMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<SysRole> findRoleByUserId(String userId) {
+        return sysRoleMapper.findRoleByUserId(userId);
     }
 }

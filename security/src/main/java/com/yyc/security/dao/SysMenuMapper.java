@@ -20,4 +20,7 @@ public interface SysMenuMapper {
     int updateByExampleSelective(@Param("record") SysMenu record, @Param("example") SysMenuExample example);
 
     int updateByExample(@Param("record") SysMenu record, @Param("example") SysMenuExample example);
+
+    List<SysMenu> findByRoleId(@Param("roleId") String roleId);
+
 }

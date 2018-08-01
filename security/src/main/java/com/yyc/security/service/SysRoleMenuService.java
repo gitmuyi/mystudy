@@ -21,9 +21,9 @@ public interface SysRoleMenuService {
 
     SysRoleMenu selectByPrimaryKey(String id);
 
-    int updateByExampleSelective(@Param("record") SysRoleMenu record, @Param("example") SysRoleMenuExample example);
+    int updateByExampleSelective( SysRoleMenu record,  SysRoleMenuExample example);
 
-    int updateByExample(@Param("record") SysRoleMenu record, @Param("example") SysRoleMenuExample example);
+    int updateByExample(SysRoleMenu record,  SysRoleMenuExample example);
 
     int updateByPrimaryKeySelective(SysRoleMenu record);
 

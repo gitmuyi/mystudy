@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title sec:authentication="name"></title>
 </head>
 <body>
-hello
+登录成功
+<sec:authorize access="hasRole('role_admin')">
+<p>管理员可看</p>
+
+</sec:authorize>
+
+<sec:authorize access="hasRole('role_sales,role_finance')">
+<p>销售人员可看,财务可看</p>
+
+</sec:authorize>
+
+<sec:authorize access="hasRole('role_sales')">
+    <p>销售可看</p>
+</sec:authorize>
 </body>
 </html>

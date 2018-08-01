@@ -17,7 +17,9 @@ public interface SysMenuService {
 
     List<SysMenu> selectByExample(SysMenuExample example);
 
-    int updateByExampleSelective(@Param("record") SysMenu record, @Param("example") SysMenuExample example);
+    int updateByExampleSelective( SysMenu record,  SysMenuExample example);
 
-    int updateByExample(@Param("record") SysMenu record, @Param("example") SysMenuExample example);
+    int updateByExample( SysMenu record,SysMenuExample example);
+
+    List<SysMenu> findByRoleId( String roleId);
 }

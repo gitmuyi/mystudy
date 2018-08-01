@@ -21,11 +21,13 @@ public interface SysRoleService {
 
     SysRole selectByPrimaryKey(String id);
 
-    int updateByExampleSelective(@Param("record") SysRole record, @Param("example") SysRoleExample example);
+    int updateByExampleSelective(SysRole record, SysRoleExample example);
 
-    int updateByExample(@Param("record") SysRole record, @Param("example") SysRoleExample example);
+    int updateByExample(SysRole record, SysRoleExample example);
 
     int updateByPrimaryKeySelective(SysRole record);
 
     int updateByPrimaryKey(SysRole record);
+
+    List<SysRole> findRoleByUserId(String userId);
 }
