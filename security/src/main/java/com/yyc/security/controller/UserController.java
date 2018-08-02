@@ -1,58 +1,40 @@
 package com.yyc.security.controller;
 
-import com.yyc.security.auth.IUserService;
 import com.yyc.security.pojo.SysUser;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.stereotype.Controller;
+import com.yyc.security.pojo.SysUserExample;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * @Auther: yangyongcui
- * @Date: 2018/8/1: 18:55
- * @Description:
+ * @author zhaoxinguo on 2017/9/13.
  */
-@Controller
-public class UserController {
-    @Autowired
-    private IUserService userService;
-
+@RestController
+@RequestMapping("/users")
+public class UserController extends BaseController {
     /**
-     * 用户登录
+     * 获取用户列表
      *
-     * @param userName 用户名
-     * @param password 密码
-     * @return 操作结果
-     * @throws AuthenticationException 错误信息
+     * @return
      */
-    @PostMapping(value = "/login", params = {"userName", "password"})
-    public String getToken(String userName, String password) throws AuthenticationException {
-        return userService.login(userName, password);
+    @GetMapping("/userList")
+    public Map<String, Object> userList() {
+        SysUserExample sysUserExample = new SysUserExample();
+        List<SysUser> users = sysUserService.selectByExample(sysUserExample);
+        logger.info("users: {}", users);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("users", users);
+        return map;
     }
 
-    /**
-     * 用户注册
-     *
-     * @param user 用户信息
-     * @return 操作结果
-     * @throws AuthenticationException 错误信息
-     */
-    @PostMapping(value = "/register")
-    public String register(SysUser user) throws AuthenticationException {
-        return userService.register(user);
+    @GetMapping("/authorityList")
+    public List<String> authorityList() {
+        List<String> authentication = getAuthentication();
+        return authentication;
     }
 
-    /**
-     * 刷新密钥
-     *
-     * @param authorization 原密钥
-     * @return 新密钥
-     * @throws AuthenticationException 错误信息
-     */
-    @GetMapping(value = "/refreshToken")
-    public String refreshToken(@RequestHeader String authorization) throws AuthenticationException {
-        return userService.refreshToken(authorization);
-    }
 }
