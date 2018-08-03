@@ -7,6 +7,7 @@ import com.yyc.security.pojo.SysUserExample;
 import com.yyc.security.service.SysRoleService;
 import com.yyc.security.service.SysUserService;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -63,7 +64,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         List<SysRole> sysRoles = sysRoleService.findRoleByUserId(userId);
         ArrayList<GrantedAuthority> authorities = new ArrayList<>();
         for (SysRole sysRole : sysRoles) {
-            authorities.add(new GrantedAuthorityImpl(sysRole.getRole()));
+            authorities.add(new SimpleGrantedAuthority(sysRole.getRole()));
         }
         return authorities;
     }

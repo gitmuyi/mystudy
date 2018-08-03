@@ -1,7 +1,12 @@
 package com.yyc.security.service;
 
+import com.yyc.security.constant.ConstantKey;
 import com.yyc.security.pojo.SysRole;
 import com.yyc.security.pojo.SysUser;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwt;
+import io.jsonwebtoken.Jwts;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,11 +58,21 @@ public class SysUserServiceTest {
     @Test
     public void testPassWord() {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-       // String encode = bCryptPasswordEncoder.encode("123456");
-      boolean a=  bCryptPasswordEncoder.matches("123456","$2a$10$Cxbc6VjNi2naIIRYDXmvw.tV6AniZ5Jv1dxFf86RGtFQiTwwdW0BC");
+        // String encode = bCryptPasswordEncoder.encode("123456");
+        boolean a = bCryptPasswordEncoder.matches("123456", "$2a$10$Cxbc6VjNi2naIIRYDXmvw.tV6AniZ5Jv1dxFf86RGtFQiTwwdW0BC");
         System.out.println(a);
-      //System.out.println(encode);
+        //System.out.println(encode);
         //$2a$10$z9c2s9zL/sVQG/SJU1d3UeVXl/fw3uQDsNx0Ql2zElV3xcYs3YSEi
     }
 
+    @Test
+    public void jwtParase() {
+        String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzU1MzAwODY0Mi1bcm9sZV9hZG1pbl0iLCJleHAiOjE1MzQ3NTYwMzd9.c6POBwwtpNB8qddXwXe3tzwxMWr9igD8YARPzpj4CwsRX6GM-xohK2wFiOcCCg-NpTPxONcBmPikc1AW79wLLg";
+
+        Jws<Claims> claimsJws = Jwts.parser()
+                .setSigningKey(ConstantKey.SIGNING_KEY)
+                .parseClaimsJws(token);
+        System.out.println(claimsJws.getBody());
+        System.out.println(claimsJws.getHeader());
+    }
 }

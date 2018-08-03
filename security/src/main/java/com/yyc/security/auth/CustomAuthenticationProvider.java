@@ -12,6 +12,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,7 +24,7 @@ import java.util.List;
 
 /**
  * 自定义身份认证验证组件
- *
+ *没有用到
  * @author zhaoxinguo on 2017/9/12.
  */
 public class CustomAuthenticationProvider implements AuthenticationProvider {
@@ -93,7 +94,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         List<SysRole> sysRoles = sysRoleService.findRoleByUserId(user.getId());
         ArrayList<GrantedAuthority> authorities = new ArrayList<>();
         for (SysRole sysRole : sysRoles) {
-            authorities.add(new GrantedAuthorityImpl(sysRole.getRole()));
+            authorities.add(new SimpleGrantedAuthority(sysRole.getRole()));
         }
         return authorities;
     }

@@ -1,7 +1,6 @@
 package com.yyc.security.filter;
 
 
-import com.yyc.security.auth.GrantedAuthorityImpl;
 import com.yyc.security.constant.ConstantKey;
 import com.yyc.security.exception.TokenException;
 import io.jsonwebtoken.*;
@@ -10,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
@@ -65,7 +65,7 @@ public class JWTAuthenticationFilter extends BasicAuthenticationFilter {
                 String[] split = user.split("-")[1].split(",");
                 ArrayList<GrantedAuthority> authorities = new ArrayList<>();
                 for (int i = 0; i < split.length; i++) {
-                    authorities.add(new GrantedAuthorityImpl(split[i]));
+                    authorities.add(new SimpleGrantedAuthority(split[i]));
                 }
                 return new UsernamePasswordAuthenticationToken(user, null, authorities);
             }
