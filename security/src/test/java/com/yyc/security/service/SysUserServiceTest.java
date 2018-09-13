@@ -1,11 +1,10 @@
 package com.yyc.security.service;
 
 import com.yyc.security.constant.ConstantKey;
-import com.yyc.security.pojo.SysRole;
-import com.yyc.security.pojo.SysUser;
+import com.yyc.security.entity.SysRole;
+import com.yyc.security.entity.SysUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import org.junit.Before;
 import org.junit.Test;

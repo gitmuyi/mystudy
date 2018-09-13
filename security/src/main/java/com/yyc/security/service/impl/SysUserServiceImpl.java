@@ -1,8 +1,8 @@
 package com.yyc.security.service.impl;
 
 import com.yyc.security.dao.SysUserMapper;
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
 import com.yyc.security.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

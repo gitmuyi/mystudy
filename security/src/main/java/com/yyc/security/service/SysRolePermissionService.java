@@ -1,8 +1,7 @@
 package com.yyc.security.service;
 
-import com.yyc.security.pojo.SysRolePermission;
-import com.yyc.security.pojo.SysRolePermissionExample;
-import org.apache.ibatis.annotations.Param;
+import com.yyc.security.entity.SysRolePermission;
+import com.yyc.security.entity.SysRolePermissionExample;
 
 import java.util.List;
 

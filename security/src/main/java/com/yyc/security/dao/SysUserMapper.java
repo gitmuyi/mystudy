@@ -1,7 +1,7 @@
 package com.yyc.security.dao;
 
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

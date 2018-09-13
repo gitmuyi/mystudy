@@ -79,9 +79,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return daoAuthenticationProvider;
     }
 
-  /*  @Override
-    public void configure(WebSecurity web) throws Exception {
-        //解决静态资源被拦截的问题
-        web.ignoring().antMatchers("/static/*");
-    }*/
+
 }

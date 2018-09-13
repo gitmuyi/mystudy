@@ -1,8 +1,8 @@
 package com.yyc.security.service.impl;
 
 import com.yyc.security.dao.SysUserRoleMapper;
-import com.yyc.security.pojo.SysUserRole;
-import com.yyc.security.pojo.SysUserRoleExample;
+import com.yyc.security.entity.SysUserRole;
+import com.yyc.security.entity.SysUserRoleExample;
 import com.yyc.security.service.SysUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

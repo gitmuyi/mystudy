@@ -1,8 +1,7 @@
 package com.yyc.security.service;
 
-import com.yyc.security.pojo.SysMenu;
-import com.yyc.security.pojo.SysMenuExample;
-import org.apache.ibatis.annotations.Param;
+import com.yyc.security.entity.SysMenu;
+import com.yyc.security.entity.SysMenuExample;
 
 import java.util.List;
 

@@ -1,8 +1,7 @@
 package com.yyc.security.filter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yyc.security.constant.ConstantKey;
-import com.yyc.security.pojo.SysUser;
+import com.yyc.security.entity.SysUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,7 +10,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 

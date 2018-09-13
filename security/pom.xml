@@ -25,6 +25,11 @@
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.25</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
         <!--数据库-->
@@ -50,6 +55,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+
         <!-- redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,9 +1,9 @@
 package com.yyc.security.auth;
 
 
-import com.yyc.security.pojo.SysRole;
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
+import com.yyc.security.entity.SysRole;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
 import com.yyc.security.service.SysRoleService;
 import com.yyc.security.service.SysUserService;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,8 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.util.Collections.emptyList;
 
 /**
  * @author zhaoxinguo on 2017/9/13.

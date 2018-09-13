@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yyc.security.dao.SysPermissionMapper">
-  <resultMap id="BaseResultMap" type="com.yyc.security.pojo.SysPermission">
+  <resultMap id="BaseResultMap" type="com.yyc.security.entity.SysPermission">
     <id column="ID" jdbcType="VARCHAR" property="id" />
     <result column="DELETE_FLAG" jdbcType="DECIMAL" property="deleteFlag" />
     <result column="PERM_NAME" jdbcType="VARCHAR" property="permName" />
@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     ID, DELETE_FLAG, PERM_NAME, PERM_CODE
   </sql>
-  <select id="selectByExample" parameterType="com.yyc.security.pojo.SysPermissionExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.yyc.security.entity.SysPermissionExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -92,13 +92,13 @@
     delete from SYS_PERMISSION
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yyc.security.pojo.SysPermissionExample">
+  <delete id="deleteByExample" parameterType="com.yyc.security.entity.SysPermissionExample">
     delete from SYS_PERMISSION
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yyc.security.pojo.SysPermission">
+  <insert id="insert" parameterType="com.yyc.security.entity.SysPermission">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select SEQ_SYS_PERMISSION.nextval from dual
     </selectKey>
@@ -107,7 +107,7 @@
     values (#{id,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=DECIMAL}, #{permName,jdbcType=VARCHAR}, 
       #{permCode,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yyc.security.pojo.SysPermission">
+  <insert id="insertSelective" parameterType="com.yyc.security.entity.SysPermission">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select SEQ_SYS_PERMISSION.nextval from dual
     </selectKey>
@@ -141,7 +141,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yyc.security.pojo.SysPermissionExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.yyc.security.entity.SysPermissionExample" resultType="java.lang.Long">
     select count(*) from SYS_PERMISSION
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -177,7 +177,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yyc.security.pojo.SysPermission">
+  <update id="updateByPrimaryKeySelective" parameterType="com.yyc.security.entity.SysPermission">
     update SYS_PERMISSION
     <set>
       <if test="deleteFlag != null">
@@ -192,7 +192,7 @@
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yyc.security.pojo.SysPermission">
+  <update id="updateByPrimaryKey" parameterType="com.yyc.security.entity.SysPermission">
     update SYS_PERMISSION
     set DELETE_FLAG = #{deleteFlag,jdbcType=DECIMAL},
       PERM_NAME = #{permName,jdbcType=VARCHAR},

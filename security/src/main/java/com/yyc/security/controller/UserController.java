@@ -1,7 +1,7 @@
 package com.yyc.security.controller;
 
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

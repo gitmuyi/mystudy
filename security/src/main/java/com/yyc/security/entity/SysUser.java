@@ -1,11 +1,8 @@
-package com.yyc.security.pojo;
+package com.yyc.security.entity;
 
 import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 
 @Data

@@ -1,9 +1,8 @@
 package com.yyc.security.service.impl;
 
-import com.yyc.security.dao.SysRoleMapper;
 import com.yyc.security.dao.SysRoleMenuMapper;
-import com.yyc.security.pojo.SysRoleMenu;
-import com.yyc.security.pojo.SysRoleMenuExample;
+import com.yyc.security.entity.SysRoleMenu;
+import com.yyc.security.entity.SysRoleMenuExample;
 import com.yyc.security.service.SysRoleMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

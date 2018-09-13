@@ -1,16 +1,16 @@
-package com.yyc.security.pojo;
+package com.yyc.security.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SysRolePermissionExample {
+public class SysRoleMenuExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public SysRolePermissionExample() {
+    public SysRoleMenuExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -244,73 +244,73 @@ public class SysRolePermissionExample {
             return (Criteria) this;
         }
 
-        public Criteria andPermIdIsNull() {
-            addCriterion("PERM_ID is null");
+        public Criteria andMenuIdIsNull() {
+            addCriterion("MENU_ID is null");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdIsNotNull() {
-            addCriterion("PERM_ID is not null");
+        public Criteria andMenuIdIsNotNull() {
+            addCriterion("MENU_ID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdEqualTo(String value) {
-            addCriterion("PERM_ID =", value, "permId");
+        public Criteria andMenuIdEqualTo(String value) {
+            addCriterion("MENU_ID =", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdNotEqualTo(String value) {
-            addCriterion("PERM_ID <>", value, "permId");
+        public Criteria andMenuIdNotEqualTo(String value) {
+            addCriterion("MENU_ID <>", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdGreaterThan(String value) {
-            addCriterion("PERM_ID >", value, "permId");
+        public Criteria andMenuIdGreaterThan(String value) {
+            addCriterion("MENU_ID >", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdGreaterThanOrEqualTo(String value) {
-            addCriterion("PERM_ID >=", value, "permId");
+        public Criteria andMenuIdGreaterThanOrEqualTo(String value) {
+            addCriterion("MENU_ID >=", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdLessThan(String value) {
-            addCriterion("PERM_ID <", value, "permId");
+        public Criteria andMenuIdLessThan(String value) {
+            addCriterion("MENU_ID <", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdLessThanOrEqualTo(String value) {
-            addCriterion("PERM_ID <=", value, "permId");
+        public Criteria andMenuIdLessThanOrEqualTo(String value) {
+            addCriterion("MENU_ID <=", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdLike(String value) {
-            addCriterion("PERM_ID like", value, "permId");
+        public Criteria andMenuIdLike(String value) {
+            addCriterion("MENU_ID like", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdNotLike(String value) {
-            addCriterion("PERM_ID not like", value, "permId");
+        public Criteria andMenuIdNotLike(String value) {
+            addCriterion("MENU_ID not like", value, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdIn(List<String> values) {
-            addCriterion("PERM_ID in", values, "permId");
+        public Criteria andMenuIdIn(List<String> values) {
+            addCriterion("MENU_ID in", values, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdNotIn(List<String> values) {
-            addCriterion("PERM_ID not in", values, "permId");
+        public Criteria andMenuIdNotIn(List<String> values) {
+            addCriterion("MENU_ID not in", values, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdBetween(String value1, String value2) {
-            addCriterion("PERM_ID between", value1, value2, "permId");
+        public Criteria andMenuIdBetween(String value1, String value2) {
+            addCriterion("MENU_ID between", value1, value2, "menuId");
             return (Criteria) this;
         }
 
-        public Criteria andPermIdNotBetween(String value1, String value2) {
-            addCriterion("PERM_ID not between", value1, value2, "permId");
+        public Criteria andMenuIdNotBetween(String value1, String value2) {
+            addCriterion("MENU_ID not between", value1, value2, "menuId");
             return (Criteria) this;
         }
 

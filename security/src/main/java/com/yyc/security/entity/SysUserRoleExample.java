@@ -1,4 +1,4 @@
-package com.yyc.security.pojo;
+package com.yyc.security.entity;
 
 import java.util.ArrayList;
 import java.util.List;

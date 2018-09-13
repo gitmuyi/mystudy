@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yyc.security.dao.SysUserRoleMapper">
-  <resultMap id="BaseResultMap" type="com.yyc.security.pojo.SysUserRole">
+  <resultMap id="BaseResultMap" type="com.yyc.security.entity.SysUserRole">
     <result column="ID" jdbcType="VARCHAR" property="id" />
     <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
     <result column="ROLE_ID" jdbcType="VARCHAR" property="roleId" />
@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     ID, USER_ID, ROLE_ID, DELETE_FLAG
   </sql>
-  <select id="selectByExample" parameterType="com.yyc.security.pojo.SysUserRoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.yyc.security.entity.SysUserRoleExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -82,13 +82,13 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.yyc.security.pojo.SysUserRoleExample">
+  <delete id="deleteByExample" parameterType="com.yyc.security.entity.SysUserRoleExample">
     delete from SYS_USER_ROLE
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yyc.security.pojo.SysUserRole">
+  <insert id="insert" parameterType="com.yyc.security.entity.SysUserRole">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select SEQ_SYS_USER_ROLE.nextval from dual
     </selectKey>
@@ -97,7 +97,7 @@
     values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, 
       #{deleteFlag,jdbcType=DECIMAL})
   </insert>
-  <insert id="insertSelective" parameterType="com.yyc.security.pojo.SysUserRole">
+  <insert id="insertSelective" parameterType="com.yyc.security.entity.SysUserRole">
     <selectKey keyProperty="id" resultType="String" order="BEFORE">
       select SEQ_SYS_USER_ROLE.nextval from dual
     </selectKey>
@@ -131,7 +131,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yyc.security.pojo.SysUserRoleExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.yyc.security.entity.SysUserRoleExample" resultType="java.lang.Long">
     select count(*) from SYS_USER_ROLE
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

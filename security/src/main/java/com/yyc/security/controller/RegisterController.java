@@ -2,8 +2,8 @@ package com.yyc.security.controller;
 
 
 import com.yyc.security.exception.UsernameIsExitedException;
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

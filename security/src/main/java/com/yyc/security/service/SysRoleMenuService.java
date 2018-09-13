@@ -1,8 +1,7 @@
 package com.yyc.security.service;
 
-import com.yyc.security.pojo.SysRoleMenu;
-import com.yyc.security.pojo.SysRoleMenuExample;
-import org.apache.ibatis.annotations.Param;
+import com.yyc.security.entity.SysRoleMenu;
+import com.yyc.security.entity.SysRoleMenuExample;
 
 import java.util.List;
 

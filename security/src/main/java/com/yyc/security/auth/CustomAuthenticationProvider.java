@@ -1,8 +1,8 @@
 package com.yyc.security.auth;
 
-import com.yyc.security.pojo.SysRole;
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
+import com.yyc.security.entity.SysRole;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
 import com.yyc.security.service.SysRoleService;
 import com.yyc.security.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;

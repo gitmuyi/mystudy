@@ -1,9 +1,9 @@
 package com.yyc.security;
 
 import com.yyc.security.dao.SysUserMapper;
-import com.yyc.security.pojo.SysUser;
-import com.yyc.security.pojo.SysUserExample;
-import com.yyc.security.redis.RedisService;
+import com.yyc.security.entity.SysUser;
+import com.yyc.security.entity.SysUserExample;
+import com.yyc.security.config.RedisService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
