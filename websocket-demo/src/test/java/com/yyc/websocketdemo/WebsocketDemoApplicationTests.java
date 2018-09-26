@@ -13,12 +13,11 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 import java.io.IOException;
 
 @RunWith(SpringRunner.class)
-//@SpringBootTest
+//@SpringBootTest  使用这个启动不起来
 @WebMvcTest
 public class WebsocketDemoApplicationTests {
     @Test
     public void contextLoads() throws IOException {
         System.out.println("sdf");
-
     }
 }
