@@ -24,5 +24,5 @@ public class SysUser implements Serializable {
 
     private String updateUser;
 
-    private Short deleteFlag;
+    private String deleteFlag;
 }

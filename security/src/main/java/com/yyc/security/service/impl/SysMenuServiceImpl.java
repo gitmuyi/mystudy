@@ -1,5 +1,6 @@
 package com.yyc.security.service.impl;
 
+
 import com.yyc.security.dao.SysMenuMapper;
 import com.yyc.security.entity.SysMenu;
 import com.yyc.security.entity.SysMenuExample;

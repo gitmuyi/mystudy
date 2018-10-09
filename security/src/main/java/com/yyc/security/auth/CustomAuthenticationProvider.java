@@ -1,10 +1,11 @@
 package com.yyc.security.auth;
 
+;
 import com.yyc.security.entity.SysRole;
 import com.yyc.security.entity.SysUser;
 import com.yyc.security.entity.SysUserExample;
-import com.yyc.security.service.SysRoleService;
-import com.yyc.security.service.SysUserService;
+import com.yyc.security.business.SysRoleBusiness;
+import com.yyc.security.business.SysUserBusiness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -33,9 +34,9 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
-    private SysRoleService sysRoleService;
+    private SysRoleBusiness sysRoleBusiness;
     @Autowired
-    private SysUserService sysUserService;
+    private SysUserBusiness sysUserBusiness;
 
     public CustomAuthenticationProvider(UserDetailsService userDetailsService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userDetailsService = userDetailsService;
@@ -86,12 +87,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         SysUserExample sysUserExample = new SysUserExample();
         SysUserExample.Criteria criteria = sysUserExample.createCriteria();
         criteria.andUserNameEqualTo(userName);
-        List<SysUser> sysUser = sysUserService.selectByExample(sysUserExample);
+        List<SysUser> sysUser = sysUserBusiness.selectByExample(sysUserExample);
         if (sysUser.isEmpty()) {
             return new ArrayList<>();
         }
         SysUser user = sysUser.get(0);
-        List<SysRole> sysRoles = sysRoleService.findRoleByUserId(user.getId());
+        List<SysRole> sysRoles = sysRoleBusiness.findRoleByUserId(user.getId());
         ArrayList<GrantedAuthority> authorities = new ArrayList<>();
         for (SysRole sysRole : sysRoles) {
             authorities.add(new SimpleGrantedAuthority(sysRole.getRole()));

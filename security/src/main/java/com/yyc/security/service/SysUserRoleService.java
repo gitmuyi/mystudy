@@ -1,5 +1,7 @@
 package com.yyc.security.service;
 
+
+
 import com.yyc.security.entity.SysUserRole;
 import com.yyc.security.entity.SysUserRoleExample;
 
@@ -16,7 +18,7 @@ public interface SysUserRoleService {
 
     List<SysUserRole> selectByExample(SysUserRoleExample example);
 
-    int updateByExampleSelective( SysUserRole record,SysUserRoleExample example);
+    int updateByExampleSelective(SysUserRole record, SysUserRoleExample example);
 
-    int updateByExample( SysUserRole record,  SysUserRoleExample example);
+    int updateByExample(SysUserRole record, SysUserRoleExample example);
 }

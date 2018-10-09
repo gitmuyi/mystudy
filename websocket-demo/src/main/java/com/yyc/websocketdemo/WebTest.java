@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 /**
@@ -42,5 +43,10 @@ public class WebTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @RequestMapping("/isNullTest")
+    @ResponseBody
+    public void isNullTest(@Valid NullTest test){
+        System.out.println(test);
     }
 }

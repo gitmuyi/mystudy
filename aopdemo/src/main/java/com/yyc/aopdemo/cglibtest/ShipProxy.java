@@ -3,7 +3,6 @@ package com.yyc.aopdemo.cglibtest;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
-import org.springframework.cglib.proxy.Proxy;
 
 import java.lang.reflect.Method;
 

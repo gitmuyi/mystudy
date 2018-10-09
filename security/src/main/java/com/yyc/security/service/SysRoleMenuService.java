@@ -1,5 +1,7 @@
 package com.yyc.security.service;
 
+
+
 import com.yyc.security.entity.SysRoleMenu;
 import com.yyc.security.entity.SysRoleMenuExample;
 
@@ -20,9 +22,9 @@ public interface SysRoleMenuService {
 
     SysRoleMenu selectByPrimaryKey(String id);
 
-    int updateByExampleSelective( SysRoleMenu record,  SysRoleMenuExample example);
+    int updateByExampleSelective(SysRoleMenu record, SysRoleMenuExample example);
 
-    int updateByExample(SysRoleMenu record,  SysRoleMenuExample example);
+    int updateByExample(SysRoleMenu record, SysRoleMenuExample example);
 
     int updateByPrimaryKeySelective(SysRoleMenu record);
 

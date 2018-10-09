@@ -1,5 +1,6 @@
 package com.yyc.security.service;
 
+
 import com.yyc.security.entity.SysPermission;
 import com.yyc.security.entity.SysPermissionExample;
 
@@ -20,9 +21,9 @@ public interface SysPermissionService {
 
     SysPermission selectByPrimaryKey(String id);
 
-    int updateByExampleSelective( SysPermission record, SysPermissionExample example);
+    int updateByExampleSelective(SysPermission record, SysPermissionExample example);
 
-    int updateByExample( SysPermission record,  SysPermissionExample example);
+    int updateByExample(SysPermission record, SysPermissionExample example);
 
     int updateByPrimaryKeySelective(SysPermission record);
 

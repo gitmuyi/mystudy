@@ -1,6 +1,5 @@
 package com.yyc.security.filter;
 
-
 import com.yyc.security.constant.ConstantKey;
 import com.yyc.security.exception.TokenException;
 import io.jsonwebtoken.*;

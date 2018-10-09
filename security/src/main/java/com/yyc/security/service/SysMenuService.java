@@ -1,5 +1,7 @@
 package com.yyc.security.service;
 
+
+
 import com.yyc.security.entity.SysMenu;
 import com.yyc.security.entity.SysMenuExample;
 
@@ -16,9 +18,9 @@ public interface SysMenuService {
 
     List<SysMenu> selectByExample(SysMenuExample example);
 
-    int updateByExampleSelective( SysMenu record,  SysMenuExample example);
+    int updateByExampleSelective(SysMenu record, SysMenuExample example);
 
-    int updateByExample( SysMenu record,SysMenuExample example);
+    int updateByExample(SysMenu record, SysMenuExample example);
 
-    List<SysMenu> findByRoleId( String roleId);
+    List<SysMenu> findByRoleId(String roleId);
 }

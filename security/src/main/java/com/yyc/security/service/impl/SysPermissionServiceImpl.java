@@ -1,5 +1,6 @@
 package com.yyc.security.service.impl;
 
+
 import com.yyc.security.dao.SysPermissionMapper;
 import com.yyc.security.entity.SysPermission;
 import com.yyc.security.entity.SysPermissionExample;

@@ -5,6 +5,8 @@ import com.yyc.security.entity.SysUserExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+
+
 public interface SysUserMapper {
     long countByExample(SysUserExample example);
 

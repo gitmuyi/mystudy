@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 配置文件的根元素 -->
+<configuration>
+    <!-- 设置：定义mybatis的一些全局性设置 -->
+    <settings>
+        <!-- 具体的参数名和参数值 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--<setting name="typeAlias" value="com.yyc.mybatisdemo.entity"></setting>-->
+    </settings>
+    <mappers>
+        <package name="com.yyc.mybatisdemo.dao"></package>
+    </mappers>
+</configuration>

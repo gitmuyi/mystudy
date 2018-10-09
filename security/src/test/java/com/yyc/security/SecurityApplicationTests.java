@@ -1,9 +1,10 @@
 package com.yyc.security;
 
-import com.yyc.security.dao.SysUserMapper;
+
+import com.yyc.security.config.RedisService;
 import com.yyc.security.entity.SysUser;
 import com.yyc.security.entity.SysUserExample;
-import com.yyc.security.config.RedisService;
+import com.yyc.security.service.SysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -25,7 +27,7 @@ public class SecurityApplicationTests {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private SysUserService sysUserService;
 
    /* @Test
     public void contextLoads() {
@@ -60,7 +62,27 @@ public class SecurityApplicationTests {
         criteria.andCreateTimeIsNull();
         criteria.andDeleteFlagEqualTo((short) 0);
 
-        List<SysUser> list = sysUserMapper.selectByExample(sysUserExample);
+        List<SysUser> list = sysUserService.selectByExample(sysUserExample);
         System.out.println(list);
+    }
+
+    @Test
+    public void testInsert() {
+
+        SysUser sysUser = new SysUser();
+        sysUser.setPassword("1112");
+        sysUser.setUserName("1562");
+        sysUser.setName("1232");
+        sysUser.setDeleteFlag("0");
+        sysUser.setCreateTime(new Date());
+        sysUser.setCreateUser("cc");
+        int i = sysUserService.insert(sysUser);
+    }
+
+    @Test
+    public void testSelect() {
+        SysUserExample sysUserExample = new SysUserExample();
+        sysUserExample.createCriteria().andIdEqualTo("");
+        sysUserService.selectByExample(sysUserExample);
     }
 }

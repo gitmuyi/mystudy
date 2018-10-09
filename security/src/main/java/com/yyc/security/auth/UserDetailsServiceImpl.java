@@ -1,11 +1,12 @@
 package com.yyc.security.auth;
 
 
+
 import com.yyc.security.entity.SysRole;
 import com.yyc.security.entity.SysUser;
 import com.yyc.security.entity.SysUserExample;
-import com.yyc.security.service.SysRoleService;
-import com.yyc.security.service.SysUserService;
+import com.yyc.security.business.SysRoleBusiness;
+import com.yyc.security.business.SysUserBusiness;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -23,18 +24,18 @@ import java.util.List;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    private SysUserService sysUserService;
+    private SysUserBusiness sysUserBusiness;
 
-    private SysRoleService sysRoleService;
+    private SysRoleBusiness sysRoleBusiness;
 
     /**
      * 通过构造器注入UserRepository
      *
      * @param sysUserService
      */
-    public UserDetailsServiceImpl(SysUserService sysUserService, SysRoleService sysRoleService) {
-        this.sysUserService = sysUserService;
-        this.sysRoleService = sysRoleService;
+    public UserDetailsServiceImpl(SysUserBusiness sysUserService, SysRoleBusiness sysRoleService) {
+        this.sysUserBusiness = sysUserService;
+        this.sysRoleBusiness = sysRoleService;
     }
 
     @Override
@@ -42,7 +43,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         SysUserExample sysUserExample = new SysUserExample();
         SysUserExample.Criteria criteria = sysUserExample.createCriteria();
         criteria.andUserNameEqualTo(username);
-        List<SysUser> sysUserList = sysUserService.selectByExample(sysUserExample);
+        List<SysUser> sysUserList = sysUserBusiness.selectByExample(sysUserExample);
         if (sysUserList.size() == 0) {
             throw new UsernameNotFoundException(username);
         }
@@ -59,7 +60,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
      * @return
      */
     public List<GrantedAuthority> authorities(String userId) {
-        List<SysRole> sysRoles = sysRoleService.findRoleByUserId(userId);
+        List<SysRole> sysRoles = sysRoleBusiness.findRoleByUserId(userId);
         ArrayList<GrantedAuthority> authorities = new ArrayList<>();
         for (SysRole sysRole : sysRoles) {
             authorities.add(new SimpleGrantedAuthority(sysRole.getRole()));

@@ -1,5 +1,7 @@
 package com.yyc.security.service;
 
+
+
 import com.yyc.security.entity.SysRolePermission;
 import com.yyc.security.entity.SysRolePermissionExample;
 
@@ -20,9 +22,9 @@ public interface SysRolePermissionService {
 
     SysRolePermission selectByPrimaryKey(String id);
 
-    int updateByExampleSelective( SysRolePermission record,  SysRolePermissionExample example);
+    int updateByExampleSelective(SysRolePermission record, SysRolePermissionExample example);
 
-    int updateByExample( SysRolePermission record,  SysRolePermissionExample example);
+    int updateByExample(SysRolePermission record, SysRolePermissionExample example);
 
     int updateByPrimaryKeySelective(SysRolePermission record);
 

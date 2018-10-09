@@ -1,6 +1,5 @@
 package com.yyc.security;
 
-import com.yyc.security.service.MoGong;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +8,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.WritableResource;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.ByteArrayOutputStream;
@@ -35,47 +33,6 @@ public class MyTest {
         char[] chars = a.toCharArray();
         chars[0] += 32;
         System.out.println(String.valueOf(chars));
-    }
-
-    @Test
-    public void test1() {
-        ThreadManager threadManager = new ThreadManager();
-        Prount prount = new Prount(threadManager);
-        Consume consume = new Consume(threadManager);
-
-        Thread p = new Thread(prount);
-        Thread p1 = new Thread(prount);
-        Thread p2 = new Thread(prount);
-        Thread p3 = new Thread(prount);
-        Thread p4 = new Thread(prount);
-        Thread p5 = new Thread(prount);
-        Thread p6 = new Thread(prount);
-
-        Thread c = new Thread(consume);
-        Thread c1 = new Thread(consume);
-        Thread c2 = new Thread(consume);
-        Thread c3 = new Thread(consume);
-        Thread c4 = new Thread(consume);
-        Thread c5 = new Thread(consume);
-        Thread c6 = new Thread(consume);
-        Thread c7 = new Thread(consume);
-        p.start();
-        p1.start();
-        p2.start();
-        p3.start();
-        p4.start();
-        p5.start();
-        p6.start();
-
-
-        c.start();
-        c1.start();
-        c2.start();
-        c3.start();
-        c4.start();
-        c5.start();
-        c6.start();
-        c7.start();
     }
 
     @Test
