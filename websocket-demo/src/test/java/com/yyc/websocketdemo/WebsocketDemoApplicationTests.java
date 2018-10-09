@@ -1,4 +1,4 @@
-package com.yyc.security.websocketdemo;
+package com.yyc.websocketdemo;
 
 import com.yyc.websocketdemo.NullTest;
 import org.junit.Test;
