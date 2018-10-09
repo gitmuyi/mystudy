@@ -1,4 +1,4 @@
-package com.yyc.security.constant;
+package com.yyc.common.constant;
 
 /**
  * 描述：

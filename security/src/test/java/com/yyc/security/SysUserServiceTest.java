@@ -4,7 +4,7 @@ import com.yyc.security.entity.SysRole;
 import com.yyc.security.entity.SysUser;
 import com.yyc.security.business.SysRoleBusiness;
 import com.yyc.security.business.SysUserBusiness;
-import com.yyc.security.constant.ConstantKey;
+import com.yyc.common.constant.ConstantKey;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;

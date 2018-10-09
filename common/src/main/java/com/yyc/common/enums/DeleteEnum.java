@@ -1,4 +1,4 @@
-package com.yyc.security.common.enums;
+package com.yyc.common.enums;
 
 public enum DeleteEnum {
     UNDELETE((short) 0, "正常"),

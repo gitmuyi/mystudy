@@ -1,6 +1,6 @@
 package com.yyc.security.filter;
 
-import com.yyc.security.constant.ConstantKey;
+import com.yyc.common.constant.ConstantKey;
 import com.yyc.security.entity.SysUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
