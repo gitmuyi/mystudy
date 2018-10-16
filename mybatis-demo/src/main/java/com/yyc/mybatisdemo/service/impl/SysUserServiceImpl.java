@@ -5,9 +5,12 @@ import com.yyc.mybatisdemo.entity.SysUserExample;
 import com.yyc.mybatisdemo.service.SysUserService;
 import com.yyc.mybatisdemo.dao.SysUserMapper;
 import com.yyc.mybatisdemo.entity.SysUser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ import java.util.List;
  * @Date: 2sysUserMapper18/7/23: sysUserMapper8:22
  * @Description:
  */
+@Slf4j
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class SysUserServiceImpl implements SysUserService {
@@ -24,6 +28,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public long countByExample(SysUserExample example) {
+
         return sysUserMapper.countByExample(example);
     }
 
@@ -49,6 +54,8 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public List<SysUser> selectByExample(SysUserExample example) {
+        log.info("hahhah woshi info 日志");
+        log.error("我是error");
         return sysUserMapper.selectByExample(example);
     }
 

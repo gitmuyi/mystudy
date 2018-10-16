@@ -34,6 +34,7 @@
         <project.common.version>0.0.1-SNAPSHOT</project.common.version>
         <project.mybatis.version>0.0.1-SNAPSHOT</project.mybatis.version>
     </properties>
+
     <dependencyManagement>
         <dependencies>
 
@@ -65,12 +66,7 @@
                 <artifactId>jjwt</artifactId>
                 <version>${jwt.version}</version>
             </dependency>
-            <dependency>
-                <!--lombok-->
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <modules>

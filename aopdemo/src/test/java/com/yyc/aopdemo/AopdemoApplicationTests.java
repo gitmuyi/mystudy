@@ -6,10 +6,15 @@ import com.yyc.aopdemo.cglibtest.IMath;
 import com.yyc.aopdemo.cglibtest.JavaProxy;
 import com.yyc.aopdemo.cglibtest.Math;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-/*@RunWith(SpringRunner.class)
-@SpringBootTest*/
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class AopdemoApplicationTests {
+
 
     @Test
     public void contextLoads() {
@@ -34,8 +39,15 @@ public class AopdemoApplicationTests {
     @Test
     public void test1() {
 
-        float a = Float.parseFloat(null);
+  /*      float a = Float.parseFloat(null);
         String.valueOf(null);
-        Son son = new Son();
+        Son son = new Son();*/
+        String a = "20180630";
+        String b = "20180601";
+        int c = a.compareTo(b);
+
+        System.out.println(c);
+
+
     }
 }

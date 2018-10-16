@@ -1,4 +1,4 @@
-package com.yyc.aopdemo;
+package com.yyc.aopdemo.entity;
 
 /**
  * @Auther: yangyongcui

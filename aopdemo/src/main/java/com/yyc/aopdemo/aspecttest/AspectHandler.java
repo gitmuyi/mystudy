@@ -38,6 +38,7 @@ public class AspectHandler {
             System.out.println(obj);
             return obj;
         } catch (Throwable e) {
+            System.out.println("baocuole");
             e.printStackTrace();
             return null;
         }
