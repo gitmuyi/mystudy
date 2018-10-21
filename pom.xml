@@ -33,7 +33,6 @@
         <druid.version>1.0.25</druid.version>
         <project.common.version>0.0.1-SNAPSHOT</project.common.version>
         <project.mybatis.version>0.0.1-SNAPSHOT</project.mybatis.version>
-        <project.study.version>0.0.1-SNAPSHOT</project.study.version>
     </properties>
 
     <dependencyManagement>
