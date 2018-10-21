@@ -20,7 +20,7 @@ spring:
     username: yyc
     password: oracle
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    type: com.alibaba.druid.pool.DruidDataSource
+    type: com.zaxxer.hikari.HikariDataSource
 
 mybatis:
     config-location: classpath:config/mybatis-config.xml
