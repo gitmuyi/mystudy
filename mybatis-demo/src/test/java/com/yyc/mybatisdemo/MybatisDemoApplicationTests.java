@@ -2,6 +2,7 @@ package com.yyc.mybatisdemo;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.yyc.mybatisdemo.dao.SysUserMapper;
 import com.yyc.mybatisdemo.entity.SysUser;
 import com.yyc.mybatisdemo.entity.SysUserExample;
@@ -45,9 +46,9 @@ public class MybatisDemoApplicationTests {
 
         SysUserExample sysUserExample = new SysUserExample();
         sysUserExample.createCriteria().andCreateTimeLessThanOrEqualTo(new Date());
-       Page<Object> page = PageHelper.startPage(1, 2);
+         PageHelper.startPage(1, 2);
         List<SysUser> sysUsers = sysUserService.selectByExample(sysUserExample);
-        System.out.println(page.getTotal());
         System.out.println(sysUsers);
+        PageInfo pageInfo=new PageInfo(sysUsers);
     }
 }
