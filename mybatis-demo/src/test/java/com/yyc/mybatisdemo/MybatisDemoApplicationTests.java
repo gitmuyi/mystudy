@@ -1,5 +1,7 @@
 package com.yyc.mybatisdemo;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.yyc.mybatisdemo.dao.SysUserMapper;
 import com.yyc.mybatisdemo.entity.SysUser;
 import com.yyc.mybatisdemo.entity.SysUserExample;
@@ -12,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -41,7 +44,10 @@ public class MybatisDemoApplicationTests {
     public void testSelect() {
 
         SysUserExample sysUserExample = new SysUserExample();
-        sysUserExample.createCriteria().andIdEqualTo("1");
-        sysUserService.selectByExample(sysUserExample);
+        sysUserExample.createCriteria().andCreateTimeLessThanOrEqualTo(new Date());
+       Page<Object> page = PageHelper.startPage(1, 2);
+        List<SysUser> sysUsers = sysUserService.selectByExample(sysUserExample);
+        System.out.println(page.getTotal());
+        System.out.println(sysUsers);
     }
 }
