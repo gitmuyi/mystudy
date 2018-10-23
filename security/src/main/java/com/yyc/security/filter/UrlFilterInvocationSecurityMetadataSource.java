@@ -34,15 +34,9 @@ public class UrlFilterInvocationSecurityMetadataSource implements FilterInvocati
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
         //获取请求地址
         String requestUrl = ((FilterInvocation) object).getRequestUrl();
-        if ("/login".equals(requestUrl)||"/register".equals(requestUrl)) {
+        if ("/login".equals(requestUrl)) {
             return null;
         }
-        if(antPathMatcher.matchStart("/register.*",requestUrl)){
-            return null;
-        }
-
-
-
         List<SysMenu> allMenu = sysMenuService.selectByExample(new SysMenuExample());
         SysRoleMenuExample sysRoleMenuExample;
         for (SysMenu menu : allMenu) {

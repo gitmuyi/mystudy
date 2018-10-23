@@ -41,12 +41,6 @@ public class LoginController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         return "page/xiaoshouyeji";
     }
-
-    @RequestMapping("/login")
-    public String logoutSuccess(String username, String password) {
-        return "/login";
-    }
-
     /**
      * 用户进行注册
      *
