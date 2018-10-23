@@ -1,4 +1,4 @@
-package com.yyc.security.config;
+package com.yyc.security.redis;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

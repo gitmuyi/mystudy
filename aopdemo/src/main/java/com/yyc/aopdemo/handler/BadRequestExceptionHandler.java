@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * @Auther: yangyongcui
  * @Date: 2018/10/16: 17:10
- * @Description:
+ * @Description: 数据绑定的时候校验数据不通过 在这个方法可拦截，否则走不到 AspectHandler 里面去 就完事了
  */
 @Slf4j
 @ControllerAdvice

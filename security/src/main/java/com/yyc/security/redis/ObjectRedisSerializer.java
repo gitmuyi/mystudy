@@ -1,4 +1,4 @@
-package com.yyc.security.config;
+package com.yyc.security.redis;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

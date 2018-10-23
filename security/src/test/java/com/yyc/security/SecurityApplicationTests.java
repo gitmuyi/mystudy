@@ -1,7 +1,7 @@
 package com.yyc.security;
 
 
-import com.yyc.security.config.RedisService;
+import com.yyc.security.redis.RedisService;
 import com.yyc.security.entity.SysUser;
 import com.yyc.security.entity.SysUserExample;
 import com.yyc.security.service.SysUserService;

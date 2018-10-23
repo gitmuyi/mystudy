@@ -49,7 +49,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         SysUser user = sysUserList.get(0);
         List<GrantedAuthority> list = authorities(user.getId());
-
         return new User(user.getUserName(), user.getPassword(), list);
     }
 

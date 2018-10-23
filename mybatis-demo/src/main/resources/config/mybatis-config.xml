@@ -21,7 +21,7 @@
             <property name="returnPageInfo" value="none"/>
         </plugin>
     </plugins>
-    <mappers>
+   <!-- <mappers>
         <package name="com.yyc.mybatisdemo.dao"></package>
-    </mappers>
+    </mappers>-->
 </configuration>

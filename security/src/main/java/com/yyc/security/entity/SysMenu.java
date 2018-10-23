@@ -16,9 +16,6 @@ public class SysMenu {
 
     private String menuMark;
 
-    public String getId() {
-        return id;
-    }
 
 
 }
