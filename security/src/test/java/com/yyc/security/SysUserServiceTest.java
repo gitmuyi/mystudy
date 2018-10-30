@@ -68,12 +68,12 @@ public class SysUserServiceTest {
 
     @Test
     public void jwtParase() {
-        String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzU1MzAwODY0Mi1bcm9sZV9hZG1pbl0iLCJleHAiOjE1MzQ3NTYwMzd9.c6POBwwtpNB8qddXwXe3tzwxMWr9igD8YARPzpj4CwsRX6GM-xohK2wFiOcCCg-NpTPxONcBmPikc1AW79wLLg";
+ /*       String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzU1MzAwODY0Mi1bcm9sZV9hZG1pbl0iLCJleHAiOjE1MzQ3NTYwMzd9.c6POBwwtpNB8qddXwXe3tzwxMWr9igD8YARPzpj4CwsRX6GM-xohK2wFiOcCCg-NpTPxONcBmPikc1AW79wLLg";
 
         Jws<Claims> claimsJws = Jwts.parser()
                 .setSigningKey(ConstantKey.SIGNING_KEY)
                 .parseClaimsJws(token);
         System.out.println(claimsJws.getBody());
-        System.out.println(claimsJws.getHeader());
+        System.out.println(claimsJws.getHeader());*/
     }
 }

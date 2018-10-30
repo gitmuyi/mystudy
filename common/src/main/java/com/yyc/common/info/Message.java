@@ -3,6 +3,8 @@ package com.yyc.common.info;
 import com.yyc.common.constant.SuccessOrFailed;
 import lombok.Data;
 
+import java.util.Map;
+
 /**
  * @Auther: yangyongcui
  * @Date: 2018/10/23: 13:59
@@ -13,6 +15,8 @@ public class Message {
     private String code;
     private String msg;
     private String status;
+
+    private Map data;
 
     /**
      * 默认成功
@@ -43,6 +47,7 @@ public class Message {
     public Message failed() {
         return new Message("9999", "操作失败", SuccessOrFailed.FAILED);
     }
+
     /**
      * 失败
      *

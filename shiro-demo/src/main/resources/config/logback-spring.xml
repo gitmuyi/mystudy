@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!-- <contextName>logback</contextName>-->
-    <property name="logback.logdir" value="/app/mybatis-demo"/>
-    <property name="logback.appname" value="mybatis-demo"/>
+    <property name="logback.logdir" value="e:mylog"/>
+    <property name="logback.appname" value="shiro-demo"/>
 
     <!--输出到控制台-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">

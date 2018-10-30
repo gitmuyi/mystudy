@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    <title>登录页面</title>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form action="/auth/login" method="post">
+    <span style="background: red" id="msg"></span>
+    <input type="text" name="username" id="username"/>
+    <input type="password" name="password" id="password"/>
+    <button class="login" type="submit" value="submit">Submit</button>
+    <p th:text="${#httpServletRequest.getAttribute('msg')}"></p>
+
+</form>
+<script type="text/javascript" src="../static/js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    $(".login").click(function () {
+        var userName = $("#username").val();
+        if (userName == '' || userName == null) {
+            alert("用户名输入不能为空");
+            return;
+        }
+
+        var password = $("#password").val();
+        if (password == '' || password == null) {
+            alert("密码输入不能为空");
+            return;
+        }
+    });
+</script>
+</body>
+</html>

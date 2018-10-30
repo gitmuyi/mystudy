@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;
@@ -18,6 +19,7 @@ public class SpringDataJpaDemoApplicationTests {
 
     @Test
     public void contextLoads() {
+        BigDecimal a = new BigDecimal(10);
     }
 
     @Autowired
@@ -70,7 +72,7 @@ public class SpringDataJpaDemoApplicationTests {
         String[] filesStr = file.list();
 
         for (String path : filesStr) {
-            File file2 = new File(fileStr + "\\"+path);
+            File file2 = new File(fileStr + "\\" + path);
             if (file2.isDirectory()) {
                 basePackage(basePath + "." + path);
             } else {

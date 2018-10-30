@@ -38,7 +38,7 @@ public class MybatisDemoApplicationTests {
         sysUser.setDeleteFlag("0");
         sysUser.setCreateTime(new Date());
         sysUser.setCreateUser("cc");
-        int i = sysUserService.insert(sysUser);
+       // int i = sysUserService.insert(sysUser);
     }
 
     @Test

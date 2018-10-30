@@ -66,7 +66,7 @@ public class SecurityApplicationTests {
         System.out.println(list);
     }
 
-    @Test
+   /* @Test
     public void testInsert() {
 
         SysUser sysUser = new SysUser();
@@ -77,7 +77,7 @@ public class SecurityApplicationTests {
         sysUser.setCreateTime(new Date());
         sysUser.setCreateUser("cc");
         int i = sysUserService.insert(sysUser);
-    }
+    }*/
 
     @Test
     public void testSelect() {
