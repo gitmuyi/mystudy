@@ -1,6 +1,7 @@
 package com.yyc.rabbitmqsender.send;
 
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +15,8 @@ public class FanoutSender {
     @Autowired
     AmqpTemplate amqpTemplate;
 
-    public void hello(){
-        amqpTemplate.convertAndSend("fanoutExchange","","hshshh");
+    public void hello() {
+        amqpTemplate.convertAndSend("fanoutExchange", "", "hshshh");
     }
 
 }
