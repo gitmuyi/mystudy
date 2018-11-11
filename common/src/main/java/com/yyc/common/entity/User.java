@@ -1,9 +1,7 @@
 package com.yyc.common.entity;
 
 import lombok.Data;
-
 import java.io.Serializable;
-
 /**
  * @Auther: yangyongcui
  * @Date: 2018/10/30: 16:43
