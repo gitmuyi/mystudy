@@ -70,10 +70,15 @@
         </dependencies>
     </dependencyManagement>
     <modules>
+        <module>aopdemo</module>
+        <module>rabbitmq-revice</module>
+        <module>rabbitmq-sender</module>
         <module>security</module>
         <module>common</module>
         <module>mybatis-demo</module>
         <module>spring-data-jpa-demo</module>
+        <module>shiro-demo</module>
+        <module>websocket-demo</module>
     </modules>
 
 </project>
