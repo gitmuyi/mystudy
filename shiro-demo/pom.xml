@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yyc</groupId>
     <artifactId>shiro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -15,7 +14,6 @@
         <groupId>com.yyc</groupId>
         <artifactId>study</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -76,11 +74,7 @@
             <artifactId>shiro-ehcache</artifactId>
             <version>1.4.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.yyc</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.common.version}</version>
-        </dependency>
+
         <!-- shiro+redis缓存插件 -->
         <dependency>
             <groupId>org.crazycake</groupId>

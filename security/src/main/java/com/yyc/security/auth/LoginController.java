@@ -1,21 +1,20 @@
 package com.yyc.security.auth;
 
-import com.yyc.common.enums.UserCodeEnum;
-import com.yyc.common.info.Message;
+
+import com.yyc.security.constant.Message;
+import com.yyc.security.entity.SysMenu;
 import com.yyc.security.entity.SysUser;
 import com.yyc.security.entity.SysUserExample;
+import com.yyc.security.enums.UserCodeEnum;
 import com.yyc.security.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -60,7 +59,7 @@ public class LoginController {
             return message.failed(UserCodeEnum.EXISTED.getCode(), "该用户已经存在");
         }
         password = new BCryptPasswordEncoder().encode(password);
-
+        SysMenu sysMenu=new SysMenu();
         SysUser sysUser = new SysUser();
         sysUser.setUserName(username);
         sysUser.setPassword(password);

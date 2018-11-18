@@ -1,11 +1,8 @@
 package com.yyc.shiro.pojo;
 
-import lombok.Data;
-import lombok.ToString;
+import java.io.Serializable;
 
-@Data
-@ToString
-public class SysRolePermission {
+public class SysRolePermission implements Serializable {
     private Integer id;
 
     private Integer roleId;

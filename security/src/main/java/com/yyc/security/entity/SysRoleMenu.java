@@ -1,9 +1,8 @@
 package com.yyc.security.entity;
 
-import lombok.Data;
+import java.io.Serializable;
 
-@Data
-public class SysRoleMenu {
+public class SysRoleMenu implements Serializable {
     private String id;
 
     private String roleId;
@@ -16,5 +15,31 @@ public class SysRoleMenu {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(String menuId) {
+        this.menuId = menuId;
+    }
+
+    public Short getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(Short deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
 }

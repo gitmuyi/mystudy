@@ -26,8 +26,6 @@
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -66,12 +64,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--模块引用-->
+      <!--  &lt;!&ndash;模块引用&ndash;&gt;
         <dependency>
             <groupId>com.yyc</groupId>
             <artifactId>common</artifactId>
             <version>${project.common.version}</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 

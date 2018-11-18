@@ -1,9 +1,8 @@
 package com.yyc.security.entity;
 
-import lombok.Data;
+import java.io.Serializable;
 
-@Data
-public class SysRolePermission {
+public class SysRolePermission implements Serializable {
     private String id;
 
     private String roleId;
@@ -16,5 +15,31 @@ public class SysRolePermission {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPermId() {
+        return permId;
+    }
+
+    public void setPermId(String permId) {
+        this.permId = permId;
+    }
+
+    public Short getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(Short deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
 }

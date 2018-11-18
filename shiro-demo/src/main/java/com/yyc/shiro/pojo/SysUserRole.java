@@ -1,10 +1,7 @@
 package com.yyc.shiro.pojo;
 
-import lombok.Data;
-import lombok.ToString;
 
-@Data
-@ToString
+
 public class SysUserRole {
     private Integer id;
 
@@ -12,5 +9,27 @@ public class SysUserRole {
 
     private Integer roleId;
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
 }
