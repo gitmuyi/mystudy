@@ -94,6 +94,12 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.7</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.yyc</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.common.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
