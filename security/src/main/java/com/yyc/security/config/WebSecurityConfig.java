@@ -60,9 +60,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/css/**");
-        web.ignoring().antMatchers("/images/**");
-        web.ignoring().antMatchers("/js/**");
+        web.ignoring().antMatchers("/static/css/**");
+        web.ignoring().antMatchers("/static/images/**");
+        web.ignoring().antMatchers("/static/js/**");
         //注册地址不拦截
         web.ignoring().antMatchers("/register");
         web.ignoring().antMatchers("/register.*");

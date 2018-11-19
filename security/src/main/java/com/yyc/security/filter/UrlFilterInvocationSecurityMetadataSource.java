@@ -37,6 +37,9 @@ public class UrlFilterInvocationSecurityMetadataSource implements FilterInvocati
         if ("/login".equals(requestUrl)) {
             return null;
         }
+        if("/login?logout".equals(requestUrl)){
+            return SecurityConfig.createList("ROLE_LOGIN");
+        }
         List<SysMenu> allMenu = sysMenuService.selectByExample(new SysMenuExample());
         SysRoleMenuExample sysRoleMenuExample;
         for (SysMenu menu : allMenu) {
