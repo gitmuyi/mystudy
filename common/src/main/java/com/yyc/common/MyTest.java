@@ -1,5 +1,6 @@
 package com.yyc.common;
 
+import com.yyc.common.utils.ConvertData;
 import com.yyc.common.utils.DateUtil;
 
 import javax.xml.transform.Source;
@@ -16,5 +17,13 @@ public class MyTest {
         Date dateAddMilliSecond = DateUtil.getDateAddDay(new Date(), 1);
         System.out.println(dateAddMilliSecond);
         System.out.println(dateElement);
+
+        int a=128;
+        double ceil = Math.ceil(a);
+        System.out.println(Math.round(
+                Math.ceil(ConvertData.toDouble(95) / 32)* 32));
+
+        String jj = String.format("零部件【%s】的发运数量已经超过计划数量。", "哈哈哈");
+        System.out.println(jj);
     }
 }
