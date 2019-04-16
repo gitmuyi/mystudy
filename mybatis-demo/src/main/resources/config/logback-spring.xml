@@ -3,7 +3,6 @@
     <!-- <contextName>logback</contextName>-->
     <property name="logback.logdir" value="/app/mybatis-demo"/>
     <property name="logback.appname" value="mybatis-demo"/>
-
     <!--输出到控制台-->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

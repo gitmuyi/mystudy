@@ -8,6 +8,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.WritableResource;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.ByteArrayOutputStream;
@@ -57,8 +58,15 @@ public class MyTest {
             bos.write(i);
         }
         System.out.println(bos.toString());
-        System.out.println("resource1===="+resource1.getFilename());
-        System.out.println("resource2===="+resource2.getFilename());
+        System.out.println("resource1====" + resource1.getFilename());
+        System.out.println("resource2====" + resource2.getFilename());
 
+    }
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    @Test
+    public void getCar() {
     }
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/ReportServer?op=emb&resource=finereport.js"></script>
+</head>
+<body>
+<input id="text" value="test.cpt"/>
+<input type="button" id="print" value="打印">
+
+<script>
+    $("#print").click(function () {
+        doPrint();
+    });
+
+    function doPrint() {
+        var url="http://127.0.0.1:8080/ReportServer?reportlet=test.cpt&${bk_smallno}=H4GZ3921003AA000030190411E001";
+        var isPopUp = false;
+        var config = {url : url,isPopUp : isPopUp}
+        FR.doURLPDFPrint(config);
+    }
+</script>
+</body>
+</html>
