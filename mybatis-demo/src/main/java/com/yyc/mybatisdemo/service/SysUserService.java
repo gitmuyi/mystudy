@@ -1,7 +1,6 @@
 package com.yyc.mybatisdemo.service;
 
 
-
 import com.yyc.mybatisdemo.entity.SysUserExample;
 import com.yyc.mybatisdemo.entity.SysUser;
 
@@ -29,4 +28,8 @@ public interface SysUserService {
     int updateByPrimaryKeySelective(SysUser record);
 
     int updateByPrimaryKey(SysUser record);
+
+    SysUser selectUserAndDept(String id);
+    SysUser selectUserAndDeptStep(String id);
+    String selectMaxUserName();
 }

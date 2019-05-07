@@ -9,6 +9,9 @@
         <!-- 具体的参数名和参数值 -->
         <setting name="logImpl" value="STDOUT_LOGGING"/>
         <!--<setting name="typeAlias" value="com.yyc.mybatisdemo.entity"></setting>-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- <setting name="lazyLoadTriggerMethods" value=""/>-->
     </settings>
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageHelper">

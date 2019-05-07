@@ -3,6 +3,7 @@ package com.yyc.common.info;
 import com.yyc.common.constant.SuccessOrFailed;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -11,12 +12,13 @@ import java.util.Map;
  * @Description:
  */
 @Data
-public class Message {
+public class Message implements Serializable {
+    private static final long serialVersionUID = 8718323621925012801L;
     private String code;
     private String msg;
     private String status;
 
-    private Map data;
+    private Object data;
 
     /**
      * 默认成功

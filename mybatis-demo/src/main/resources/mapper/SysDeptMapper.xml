@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyc.mybatisdemo.dao.SysDeptMapper">
+    <resultMap id="mySysDept" type="com.yyc.mybatisdemo.entity.SysDept">
+        <id column="id" property="id"></id>
+        <result column="DEPT_NAME" property="deptName"></result>
+    </resultMap>
+    <select id="selectById" parameterType="java.lang.String" resultMap="mySysDept">
+        select ID,DEPT_NAME from SYS_DEPT where id=#{id}
+    </select>
+    <!--分布查询,查询完了部门信息之后查询该部门下的员工集合-->
+    <resultMap id="mySysDeptStep" type="com.yyc.mybatisdemo.entity.SysDept">
+        <id column="id" property="id"></id>
+        <result column="DEPT_NAME" property="deptName"></result>
+        <collection property="sysUsers"
+                    select="com.yyc.mybatisdemo.dao.SysUserMapper.getUserByDeptId" column="id">
+        </collection>
+    </resultMap>
+    <select id="selectByIdStep" parameterType="java.lang.String" resultMap="mySysDeptStep">
+        select ID,DEPT_NAME from SYS_DEPT where id=#{id}
+    </select>
+    <resultMap id="sysUserResultMap" type="com.yyc.mybatisdemo.entity.SysUser">
+        <id column="U_ID" property="id"></id>
+        <result column="USER_NAME" property="userName"/>
+        <result column="PASSWORD" property="password"/>
+        <result column="CREATE_TIME" property="createTime"/>
+        <result column="CREATE_USER" property="createUser"/>
+        <result column="UPDATE_TIME" property="updateTime"/>
+        <result column="UPDATE_USER" property="updateUser"/>
+        <result column="DELETE_FLAG" property="deleteFlag"/>
+        <result column="NAME" property="name"/>
+        <result column="DEPT_ID" property="deptId"/>
+    </resultMap>
+
+    <sql id="baseSql">
+    SELECT
+            D ."ID",
+            D .DEPT_NAME,
+            U ."ID" AS U_ID,
+            U .USER_NAME,
+            U ."PASSWORD",
+            U .CREATE_TIME,
+            U.CREATE_USER,
+            U .UPDATE_TIME,
+            U .UPDATE_USER,
+            U .DELETE_FLAG,
+            U ."NAME",
+            U .DEPT_ID
+        FROM
+            SYS_DEPT D
+        LEFT JOIN SYS_USER U ON D ."ID" = U .DEPT_ID
+        WHERE
+            D ."ID" = #{deptId}
+</sql>
+
+    <resultMap id="selectDeptAndUserByDeptIdResultMap" type="com.yyc.mybatisdemo.entity.SysDept">
+        <id column="id" property="id"></id>
+        <result column="DEPT_NAME" property="deptName"/>
+        <collection property="sysUsers" resultMap="sysUserResultMap">
+        </collection>
+    </resultMap>
+    <select id="selectDeptAndUserByDeptId" resultMap="selectDeptAndUserByDeptIdResultMap">
+         <include refid="baseSql"/>
+    </select>
+
+</mapper>

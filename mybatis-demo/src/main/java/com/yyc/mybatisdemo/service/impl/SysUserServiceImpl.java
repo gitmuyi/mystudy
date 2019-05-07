@@ -21,7 +21,7 @@ import java.util.List;
  */
 @Slf4j
 @Service
-@Transactional(rollbackFor = Exception.class)
+@Transactional
 public class SysUserServiceImpl implements SysUserService {
     @Autowired
     private SysUserMapper sysUserMapper;
@@ -44,7 +44,8 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public int insert(SysUser record) {
-        return sysUserMapper.insert(record);
+        int count = sysUserMapper.insert(record);
+        return count;
     }
 
     @Override
@@ -82,5 +83,20 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public int updateByPrimaryKey(SysUser record) {
         return sysUserMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public SysUser selectUserAndDept(String id) {
+        return sysUserMapper.selectUserAndDept(id);
+    }
+
+    @Override
+    public SysUser selectUserAndDeptStep(String id) {
+        return sysUserMapper.selectUserAndDeptStep(id);
+    }
+
+    @Override
+    public String selectMaxUserName() {
+        return sysUserMapper.selectMaxUserName();
     }
 }

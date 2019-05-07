@@ -1,6 +1,8 @@
 package com.yyc.common.entity;
 
 import lombok.Data;
+import lombok.ToString;
+
 import java.io.Serializable;
 /**
  * @Auther: yangyongcui
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @Description:
  */
 @Data
+@ToString
 public class User implements Serializable {
     private static final long serialVersionUID = -5217065440799738301L;
     private String name;
